@@ -1,3 +1,5 @@
 FROM python:3.9
-COPY app.py ./
-CMD ["python", "./app.py"]
+WORKDIR /home
+RUN cd /home && \
+    git clone git@github.umn.edu:tikal004/dockerfail.git
+ENTRYPOINT [ "/home/dockerfail/app.py" ]
