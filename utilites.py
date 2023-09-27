@@ -1,4 +1,5 @@
 import argparse
+import subprocess
 
 def get_args():
     """
@@ -12,9 +13,9 @@ def get_args():
         help=("Input used by app.")
     )
     parser.add_argument(
-        "-d", "--double",
+        "-l", "--list-dir",
         action="store_true",
-        help=("Print twice.")
+        help=("Perform an ls on the input directory.")
     )
     parser.add_argument(
         "-f", "--fail",
@@ -23,3 +24,7 @@ def get_args():
     )
     args = parser.parse_args()
     return args
+
+def print_ls(dir):
+    cmd = ['ls', dir]
+    subprocess.check_call(cmd)

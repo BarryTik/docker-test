@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 # coding: utf-8
 from utilites import(
-    get_args
+    get_args,
+    print_ls
 )
 
 def main():
@@ -18,9 +19,10 @@ def main():
         print(f"This will not print: {failure}")
     
     print(args.input)
-    
-    if args.double:
-        print(args.input)
+
+    if args.list_dir:
+        print_ls(args.input)
+
 
 if __name__ == "__main__":
     main()
