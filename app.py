@@ -1,11 +1,26 @@
 #!/usr/bin/python3
 # coding: utf-8
+from utilites import(
+    get_args
+)
 
-dictionary = {
-    "test":"test"
-}
-print("This container will error!")
+def main():
+    args = get_args()
+    
+    if args.fail:
+        dictionary = {
+            "test":"test"
+        }
+        print("This container will now error!")
 
-fail = dictionary["not_test"]["this_doesnt_exist"]
+        failure = dictionary["not_test"]["this_doesnt_exist"]
 
-print("This will not print :(")
+        print(f"This will not print: {failure}")
+    
+    print(args.input)
+    
+    if args.double:
+        print(args.input)
+
+if __name__ == "__main__":
+    main()
