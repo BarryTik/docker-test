@@ -1,2 +1,2 @@
-# dockerfail
-A container that does next to nothing, it will error and not finish executing.
+# docker-test
+An application to test docker container commands.
